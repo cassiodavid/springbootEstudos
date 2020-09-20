@@ -9,6 +9,21 @@ class EstudosApplicationTests {
 	@Test
 	void contextLoads() {
 		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
+		System.out.println("tes asdasdaassd ste 2");
 	}
 
 }

@@ -8,6 +8,8 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.estudos.estudos.buscasBanco.UsuarioBusca;
 import br.estudos.estudos.entity.Pessoa;
 import br.estudos.estudos.repository.PessoaRepository;
 
@@ -24,9 +27,17 @@ public class PessoaController {
     @Autowired
     private PessoaRepository _pessoaRepository;
 
-    @RequestMapping(value = "/pessoa", method = RequestMethod.GET)
-    public List<Pessoa> Get() {
-        return _pessoaRepository.findAll();
+    @RequestMapping(value = "/pessoa/pesquisa", method = RequestMethod.GET)
+    public List<Pessoa> Get(Pageable pageable) {
+        // Lembrar Conceitos de Paginação no Spring
+        Page<Pessoa> page = _pessoaRepository.findAll(pageable);
+        return page.getContent();
+    }
+
+    @RequestMapping(value = "/pessoa/pesquisa-dinamica", method = RequestMethod.GET)
+    public List<Pessoa> GetPesquisaDinamica(UsuarioBusca usuarioBusca, Pageable pageable) {
+        // Lembrar Conceitos JPA , Criteria... bla bla bla
+        return _pessoaRepository.findAll(usuarioBusca.toSpec(), pageable).getContent();
     }
 
     @RequestMapping(value = "/pessoa/{id}", method = RequestMethod.GET)
