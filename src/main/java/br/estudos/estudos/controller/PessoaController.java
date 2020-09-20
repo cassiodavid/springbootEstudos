@@ -23,7 +23,7 @@ import br.estudos.estudos.repository.PessoaRepository;
 
 @RestController
 public class PessoaController {
-
+    
     @Autowired
     private PessoaRepository _pessoaRepository;
 
@@ -33,13 +33,13 @@ public class PessoaController {
         Page<Pessoa> page = _pessoaRepository.findAll(pageable);
         return page.getContent();
     }
-
+    
     @RequestMapping(value = "/pessoa/pesquisa-dinamica", method = RequestMethod.GET)
     public List<Pessoa> GetPesquisaDinamica(UsuarioBusca usuarioBusca, Pageable pageable) {
-        // Lembrar Conceitos JPA , Criteria... bla bla bla
+        // Lembrar Conceitos JPA , Criteria... bla bla
         return _pessoaRepository.findAll(usuarioBusca.toSpec(), pageable).getContent();
     }
-
+    
     @RequestMapping(value = "/pessoa/{id}", method = RequestMethod.GET)
     public ResponseEntity<Pessoa> GetById(@PathVariable(value = "id") long id) {
         Optional<Pessoa> pessoa = _pessoaRepository.findById(id);
