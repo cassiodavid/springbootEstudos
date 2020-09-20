@@ -8,7 +8,7 @@ class EstudosApplicationTests {
 
 	@Test
 	void contextLoads() {
-		System.out.println("tes ste 2");
+		System.out.println("tes asd ste 2");
 	}
 
 }
