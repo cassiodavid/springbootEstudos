@@ -8,7 +8,7 @@ class EstudosApplicationTests {
 
 	@Test
 	void contextLoads() {
-		
+		System.out.println("teste");
 	}
 
 }
